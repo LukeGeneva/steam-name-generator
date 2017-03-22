@@ -10,11 +10,12 @@ else {
 }
 
 function isAuto() {
-  return process.argv.length > 2 && process.argv[2] === '-a';
+  return process.argv.indexOf('-a') !== -1;
 }
 
 function getInterval() {
-  return process.argv[3] || 5000;
+  const intervalIndex = process.argv.indexOf('-a') + 1;
+  return process.argv[intervalIndex] || 5000;
 }
 
 function printName() {
